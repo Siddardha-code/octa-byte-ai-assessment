@@ -22,7 +22,7 @@ AWS Secrets Manager → DB Credentials
 ## Project Structure
 
 ```
-devops-assignment/
+octa-byte-ai-assessment/
 ├── app/                        # Static web application files
 ├── terraform/
 │   ├── main.tf                 # Root module — calls all child modules

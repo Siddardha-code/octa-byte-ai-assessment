@@ -66,7 +66,6 @@ pipeline {
         stage('Deploy to Staging') {
             steps {
                 echo 'Deploying to staging S3 bucket...'
-                withAWS(region: "${AWS_REGION}", credentials: 'aws-credentials') {
                     sh '''
                         # Upload static files to S3
                         aws s3 sync ./app s3://${S3_BUCKET} \
@@ -84,7 +83,6 @@ pipeline {
                         
                         echo "CloudFront cache invalidated"
                     '''
-                }
             }
         }
 
@@ -93,7 +91,7 @@ pipeline {
                 echo 'Waiting for manual approval...'
                 // Pauses pipeline and sends email asking for approval
                 mail(
-                    to: 'your@gmail.com',
+                    to: 'siddardhareddy456@gmail.com',
                     subject: "Approval needed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: """
                         Build ${env.BUILD_NUMBER} is ready for production.

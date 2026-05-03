@@ -29,11 +29,6 @@ pipeline {
             steps {
                 echo 'Running HTML validation tests...'
                 sh '''
-                    # Install html linter if not present
-                    if ! command -v tidy &> /dev/null; then
-                        sudo yum install -y tidy || sudo apt-get install -y tidy
-                    fi
-                    
                     # Run tidy on all HTML files
                     find ./app -name "*.html" | while read file; do
                         echo "Checking $file"

@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // DockerHub credentials configured in Jenkins
-        DOCKERHUB_CREDENTIALS = credentials('2f5df908-432c-4c5e-aa9d-75794c067f99')
+        DOCKERHUB_CREDENTIALS = credentials('docker-cred')
         DOCKERHUB_REPO        = 'tigershroff/octa-byte'
         
         // AWS config
